@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f1f1;
+    padding: 70px 0 0 0;
+}
+
+body,
+input,
+button {
+    font-family: 'Roboto', sans-serif;
+}
+
+/*header*/
+
+header {
+    height: 70px;
+    width: 100%;
+    background-color: #2196F3;
+    opacity: 1;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+header input[type="text"] {
+    height: 40px;
+    width: 100%;
+    background-color: #64B5F6;
+    outline: none;
+    border-radius: 5px 50px 50px 5px;
+    border: 0;
+    text-indent: 15px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 15px;
+    padding: 0 60px 0 0;
+}
+
+header input::placeholder {
+    color: #fff;
+}
+
+header button {
+    height: 50px;
+    width: 50px;
+    background: #fff;
+    border: 0;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border-radius: 100px;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    transition: all 100ms ease;
+}
+
+header button:hover {
+    transform: scale(1.1);
+}
+
+header button svg {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+header button svg .fill {
+    fill: #2196F3;
+}
+
+/*items*/
+
+.container {
+    width: 100%;
+    padding: 15px;
+}
+
+ul.todo {
+    width: 100%;
+}
+
+ul.todo li {
+    text-align:left;
+    width: 100%;
+    min-height: 50px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    margin: 0 0 10px 0;
+    position: relative;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 15px 110px 15px 15px;
+    word-wrap: break-word;
+}
+
+ul.todo li .button_group {
+    height: 50px;
+    width: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+}
+
+ul.todo li .button_group button {
+    height: 50px;
+    width: 50px;
+    background: none;
+    position: relative;
+    cursor: pointer;
+}
+
+ul.todo li .button_group button:last-of-type::before {
+    content: "";
+    height: 30px;
+    width: 1px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    background-color: #95989A;
+    opacity: 0.5;
+}
+
+ul.todo li .button_group button svg {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ul.todo li .button_group button.remove svg .fill {
+    fill: #777777;
+}
+
+ul.todo li .button_group button.remove:hover svg .fill {
+    fill: #F44336;
+    opacity: 80%;
+}
+
+ul.todo li .button_group button.complete svg {
+    border-radius: 50px;
+    border: 1px solid #2196F3;
+}
+
+ul.todo li .button_group button.complete svg .fill {
+    fill: #2196F3;
+}
+
+ul.todo#completed li .button_group button.complete svg {
+    background: #2196F3;
+    border: 0;
+}
+
+ul.todo#completed li .button_group button.complete svg .fill {
+    fill: #fff;
+}
+
+ul.todo:not(#completed) li .button_group button.complete:hover svg {
+    background: #74C1FF;
+}
+
+ul.todo:not(#completed) li .button_group button.complete:hover svg .fill {
+    fill: #ffffff;
+}
+
+ul.todo#completed {
+    padding: 50px 0 0 0;
+    position: relative;
+}
+
+ul.todo#completed:before {
+    content: "";
+    height: 1px;
+    width: 180px;
+    background-color: #95989A;
+    opacity: 0.2;
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+ul.todo#todo:empty::after {
+    content: 'You don\t have anything to do';
+    
+}
+
+ul.todo#completed:empty::after {
+    content: 'You don\'t have finished any todo!';
+}
+ul.todo#todo{
+    margin: 20px 0 0 0;
+}
+ul.todo#todo,
+ul.todo#completed {
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 300;
+    color: #777777;
+    display: block;
+}
